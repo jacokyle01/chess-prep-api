@@ -1,0 +1,32 @@
+# method for traversing the position graph
+enum ExplorationStrategy {
+	DEPTH
+	BREADTH
+}
+
+#current promotion strategy
+enum PromotionStrategy {
+	MOST
+	NEXT
+}
+
+#current demotion strategy
+enum DemotionStrategy {
+	MOST
+	NEXT
+}
+
+#graph traversal + limit 
+input GetNextNode {
+	by: ExplorationStrategy!
+	max: Int!
+}
+
+# Define the main schema type
+type TrainingConfig {
+	buckets: [Int!]!
+	getNext: GetNextNode!
+	demotion: DemotionStrategy!
+	promotion: PromotionStrategy!
+	index: Int!
+}
