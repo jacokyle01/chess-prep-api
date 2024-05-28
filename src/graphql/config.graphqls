@@ -17,7 +17,7 @@ enum DemotionStrategy {
 }
 
 #graph traversal + limit 
-input GetNextNode {
+type GetNextNode {
 	by: ExplorationStrategy!
 	max: Int!
 }
@@ -29,4 +29,8 @@ type TrainingConfig {
 	demotion: DemotionStrategy!
 	promotion: PromotionStrategy!
 	index: Int!
+}
+
+type Query {
+	getTrainingConfig: TrainingConfig
 }
